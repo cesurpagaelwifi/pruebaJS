@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <input type="button" id="anterior" value="<-">
+    <input type="button" id="siguiente" value="->">
+</div>
+<div id="lienzo"></div>
+
+<script>
+    var fotos = ['foto1.png','foto2.png','foto3.png','foto4.png'];
+    var i = 0; // Guarda el número de la foto que toca mostrar
+    document.addEventListener("DOMContentLoaded",function(){
+        document.getElementById('anterior').addEventListener("click",function(){
+            i--;
+            if(i<0){i=3;}
+            document.getElementById('lienzo').innerHTML = '<img src="img/'+fotos[i]+'">';
+        });
+        document.getElementById('siguiente').addEventListener("click",function(){
+            i++;
+            if(i>3){i=0;}
+            document.getElementById('lienzo').innerHTML = '<img src="img/'+fotos[i]+'">';
+        });
+    });
+</script>
+
+</body>
+</html>

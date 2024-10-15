@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width:100%;
+        }
+        #capa_barquito{
+            width:150px;
+            position: relative;
+            left: 150px;
+        }
+        #capa_avioncito{
+            width:250px;
+            position: absolute;
+            z-index: 2000;
+            right: -150px;
+        }
+        
+        body{
+            background-image: url("img/fondo.gif");
+            background-repeat:no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" id="izquierda" value="<-">
+    <input type="button" id="restablecer" value="Restablecer">
+    <input type="button" id="derecha" value="->">
+    <input type="button" id="vuela" value="<==">
+    <span id="info"></span>
+</div>
+<div id="capa_avioncito">
+    <img src="img/avion.gif" alt="Barquito">
+</div>
+<div id="capa_barquito">
+    <img src="img/barco.gif" alt="Barquito">
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        let capaBarquito = document.getElementById('capa_barquito');
+        let capaAvioncito = document.getElementById('capa_avioncito');
+        let botIzquierda = document.getElementById('izquierda');
+        let botDerecha = document.getElementById('derecha');
+        let botRestablecer = document.getElementById('restablecer');
+        let botVuela = document.getElementById('vuela');
+
+        let posicionx = 150;
+        let posxAvioncito = 150;
+
+        // Con getBoundingClientRect() obtenemos la distancia entre el borde superior de la página y el barco.
+        // Así podremos asignarle al avión esa misma distancia.
+        capaAvioncito.style.top = capaBarquito.getBoundingClientRect().top+"px";
+       
+
+        botIzquierda.addEventListener("click",function(){
+            posicionx-= 5;
+            capaBarquito.style.left = posicionx+"px";
+            muestraInfo();
+        });
+
+        botDerecha.addEventListener("click",function(){
+            posicionx+= 5;
+            capaBarquito.style.left = posicionx+"px";
+            muestraInfo();
+        });
+
+        botRestablecer.addEventListener("click",function(){
+            capaBarquito.style.left = "150px";
+            muestraInfo();
+        });
+
+        botVuela.addEventListener("click",function(){
+            posxAvioncito+=20;
+            capaAvioncito.style.right = posxAvioncito+"px";
+        });
+
+        function muestraInfo(){
+            document.getElementById('info').innerHTML = "Posición x: "+posicionx;
+        }
+    });
+</script>
+
+</body>
+</html>

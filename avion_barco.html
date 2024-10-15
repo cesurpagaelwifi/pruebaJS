@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="2n">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+img{
+width: 100%;
+}
+
+#capa_barquito{
+    width:150px;
+    position: relative;
+    left: 150px;
+}
+#capa_avion{
+    width:250px;
+    position: absolute;
+    z-index: 2000;
+    right: -150px;
+}
+body{
+    background-image: url("img/fondo.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+        </style>
+    </head>
+    <body>
+        <div>
+            <input type="button" id="izquierda" value="<-">
+            <input type="button" id="Restablecer" value="Restablecer">
+            <input type="button" id="derecha" value="->">
+        </div>
+        <div id="capa_barquito">
+            <img src="img/barco.gif" alt="Barquito">
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded",function(){
+
+                let botIzquierda = document.getElementById('izquierda');
+                let botDerecha = document.getElementById('derecha');
+                let botRestablecer = document.getElementById('Restablecer');
+                
+                let posicionx = 150;
+
+                capaBarquito.getBoundingClientRect().top
+
+
+
+
+                boyIzquierda.addEventListener("click", function(){
+                    posicionx -= 5;
+                    capaBarquito.style.left = posicionx + "px";
+                    muestraInfo();
+                });
+                
+                botDerecha.addEventListener("click", function(){
+                    posicionx=posicionx+=5;
+                    capaBarquito.style.left = posicionx + "px";
+                    muestraInfo();
+                });
+
+                botRestablecer.addEventListener("click", function(){
+                    capaBarquito.style.left = "150px";
+
+                });
+
+                function mmuestraInfo(){
+
+                }
+
+
+            });
+        </script>
+
+    </body>
+</html>

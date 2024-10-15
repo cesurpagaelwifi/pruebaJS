@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Tarifa de precios</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="tarifa"></div>
+
+<script src="js/datos.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        let tarifa=document.getElementById('tarifa');
+
+        let tablita= '';
+
+        tablita+= '<table>';
+            for(i=0; i<productos.length; i++){
+
+                tablita+='<tr>';
+                    tablita+= '<td></td>';
+                    tablita+= '<td>' + poductos [i]+'</td>';
+                    tablita+= '<td></td>';
+                    tablita+= '<td></td>';
+                    tablita+= '<td></td>';
+                tablita+= '<tr>' ;              }
+                    tablita+='</table>';
+                    tarifa.innerHTML = tablita;
+                });
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="cajita"></div>
+<div id="cajita2"></div>
+<input type="button" id="rellenatexto" value="rellename">
+<input type="button" id="muestra" value="block">
+<input type="button" id="oculta" value="hidden">
+
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        document.getElementById('rellenatexto').addEventListener("click",function(){
+            let eltexto = prompt('Qué pongo');
+            document.getElementById('cajita').innerHTML = eltexto;
+            document.getElementById('cajita2').innerText = eltexto;
+            document.getElementById('rellenatexto').value = "ya lo has rellenado";
+
+            document.getElementById('cajita').style.backgroundColor = '#d1d1d1';
+
+            document.getElementById('cajita').style.borderColor = '#888800';
+            document.getElementById('cajita').style.borderWidth = '4px';
+            document.getElementById('cajita').style.borderStyle = 'solid';
+            document.getElementById('cajita').style.padding = '30px';
+            document.getElementById('cajita').style.marginLeft = '130px';
+
+        });
+        document.getElementById('muestra').addEventListener("click",function(){
+            document.getElementById('cajita').style.display = 'block';
+            document.getElementById('cajita').innerHTML = '<img src="img/calabazas.jpg" widht="400" alt="Calabazas">';
+        }); 
+        document.getElementById('oculta').addEventListener("click",function(){
+            document.getElementById('cajita').style.display = 'hidden';
+        }); 
+    });
+</script>
+        </body>
+</html>

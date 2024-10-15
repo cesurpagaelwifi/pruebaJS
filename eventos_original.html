@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1 id="encabezado">RECETA DE PAPAS ARRUGÁS</h1>
+  <input type="button" id="red" value="ROJO" class="cambiacolor"> 
+  <input type="button" id="blue" value="AZUL" class="cambiacolor"> 
+  <input type="button" id="green" value="VERDE" class="cambiacolor"> 
+
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+       
+        let encabezado = document.getElementById('encabezado');
+        encabezado.addEventListener('click',function(){
+            alert("Más pulsao");
+        });
+
+        let botones = document.getElementsByClassName('cambiacolor');
+
+        for (let i = 0; i < botones.length; i++) {
+            botones[i].addEventListener('click', function(){
+                let color = this.id;
+                encabezado.style.backgroundColor = color;
+            });
+        }
+    });
+</script>
+</body>
+</html>

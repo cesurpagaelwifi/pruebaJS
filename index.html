@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var mensaje = '';
+        function focoNombre(){
+            document.formu.nombre.focus();
+            if(document.formu.edad == 18){
+                alert("sí");
+            }
+            else{
+                alert("no");
+            }
+        }
+    </script>
+</head>
+<body onLoad="focoNombre();">
+    <form name="formu" id="formu" action="" method="get">
+        <div>
+            Nombre: <input type="text" name="nombre" id="nombre">
+        </div>
+        <div>Edad: <input type="number" name="edad" id="edad">
+        </div>
+        <div>
+            DNI: <input type="text" name="dni" id="dni">
+        </div>
+        <div>
+            Contraseña: <input type="password" name="clave" id="clave">
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+</body>
+</html>
